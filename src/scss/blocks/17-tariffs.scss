@@ -3,301 +3,305 @@
 .tariffs {
     background-color: var(--block-bg, #191b2f);
     padding: 14rem 0;
-    color: white;
+    color: var(--block-color, white);
+    font-family: var(--shlange);
 
     @include breakpoint(mobile) {
         padding: 7rem 0;
     }
-}
 
-.tariffs__content {
-    @include breakpointMF(small-tablet) {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-column-gap: 4rem;
+    .tariffs__content {
+        @include breakpointMF(small-tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-column-gap: 4rem;
+        }
     }
-}
 
-.tariffs__heading {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 4.5rem;
-    line-height: 120%;
-    grid-column: 1 / -1;
-    margin: 0;
-    @include breakpoint(mobile) {
+    .tariffs__heading {
         font-style: normal;
         font-weight: 400;
-        font-size: 2.4rem;
+        font-size: 4.5rem;
         line-height: 120%;
-    }
-}
-
-.tariffs__heading-text {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.5rem;
-    line-height: 120%;
-    opacity: 0.9;
-    margin: 0;
-    margin-top: 4.5rem;
-
-    @include breakpoint(mobile) {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.8rem;
-        line-height: 120%;
-        margin-top: 2rem;
-    }
-}
-
-.tariffs__slider {
-    margin-top: 8rem;
-    grid-column: 1 / -1;
-    @include breakpoint(mobile) {
-        margin-top: 4rem;
-    }
-    .swiper {
-        overflow: visible;
-    }
-
-    .swiper-slide {
+        grid-column: 1 / -1;
+        margin: 0;
         @include breakpoint(mobile) {
-            width: 26rem;
-            margin-right: 0.8rem;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-    }
-}
-
-.tariffs__list {
-    @include breakpointMF(small-tablet) {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        grid-gap: 4rem;
-    }
-}
-
-.tariffs__list-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.tariffs__card {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    flex-grow: 1;
-    padding: 4rem 3.2rem;
-    align-items: center;
-    border: 2px solid var(--card-border-color, rgba(255, 255, 255, 0.1));
-    border-radius: 1rem;
-    position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: -2px;
-        border-radius: 1rem;
-        border: 2px solid transparent;
-        background: linear-gradient(
-                to right,
-                var(--gradient-color-1, #ffbee8),
-                var(--gradient-color-2, #e06cfd),
-                var(--gradient-color-3, #8671f3),
-                var(--gradient-color-4, #1e85e9)
-            )
-            border-box;
-        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
-        transition: opacity 0.2s;
-        pointer-events: none;
-        opacity: 0;
-    }
-
-    @media (hover: hover) {
-        &:hover {
-            &::before {
-                opacity: 1;
-            }
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2.4rem;
+            line-height: 120%;
         }
     }
 
-    @include breakpoint(mobile) {
-        padding: 2.4rem;
-    }
-}
-
-.tariffs__card-main-title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 110%;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin: 0;
-    @include breakpoint(mobile) {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 1.2rem;
-        line-height: 110%;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-    }
-}
-
-.tariffs__card-amount {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 8rem;
-    line-height: 8rem;
-    background: linear-gradient(
-        90deg,
-        var(--gradient-color-1, #ffbee8) 0%,
-        var(--gradient-color-2, #e06cfd) 33.85%,
-        var(--gradient-color-3, #8671f3) 65.63%,
-        var(--gradient-color-4, #1e85e9) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    margin: 0;
-    margin-top: 4rem;
-
-    @include breakpoint(mobile) {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 6rem;
-        line-height: 8rem;
-        margin-top: 1rem;
-    }
-}
-
-.tariffs__card-secondary-title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 120%;
-    text-align: center;
-    margin: 0;
-    margin-top: 4rem;
-
-    @include breakpoint(mobile) {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 1.6rem;
-        line-height: 120%;
-        margin-top: 0.5rem;
-    }
-}
-
-.tariffs__card-list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-gap: 1.2rem;
-    text-align: left;
-    align-self: stretch;
-    margin: 0;
-    padding: 0;
-    margin-top: 3.5rem;
-    margin-bottom: 4rem;
-    @include breakpoint(mobile) {
-        grid-gap: 1rem;
-        margin-bottom: 2.4rem;
-        margin-top: 2rem;
-    }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.tariffs__card-list-item {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    padding-left: 3rem;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 120%;
-
-    @include breakpoint(mobile) {
+    .tariffs__heading-text {
         font-style: normal;
         font-weight: 400;
-        font-size: 1.2rem;
+        font-size: 2.5rem;
         line-height: 120%;
-        padding-left: 2.5rem;
+        opacity: 0.9;
+        margin: 0;
+        margin-top: 4.5rem;
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 120%;
+            margin-top: 2rem;
+        }
     }
-}
 
-.tariffs__card-bullet {
-    width: 1.4rem;
-    height: 1.4rem;
-    position: absolute;
-    top: 0.1rem;
-    left: 0;
-}
+    .tariffs__slider {
+        margin-top: 8rem;
+        grid-column: 1 / -1;
+        @include breakpoint(mobile) {
+            margin-top: 4rem;
+        }
+        .swiper {
+            overflow: visible;
+        }
 
-.tariffs__card-link {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.8rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    user-select: none;
-    text-transform: uppercase;
-    background: linear-gradient(
-        90deg,
-        var(--gradient-color-1, #ffbee8) 0%,
-        var(--gradient-color-2, #e06cfd) 33.85%,
-        var(--gradient-color-3, #8671f3) 65.63%,
-        var(--gradient-color-4, #1e85e9) 100%
-    );
-    border-radius: 4rem;
-    margin-top: auto;
-    padding: 1.9rem 2.4rem;
+        .swiper-slide {
+            @include breakpoint(mobile) {
+                width: 26rem;
+                margin-right: 0.8rem;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 
-    @include breakpoint(mobile) {
+    .tariffs__list {
+        @include breakpointMF(small-tablet) {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-gap: 4rem;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .tariffs__list-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tariffs__card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex-grow: 1;
+        padding: 4rem 3.2rem;
+        align-items: center;
+        border: 2px solid var(--card-border-color, rgba(255, 255, 255, 0.1));
+        border-radius: 1rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 1rem;
+            border: 2px solid transparent;
+            background: linear-gradient(
+                    to right,
+                    var(--gradient-color-1, #ffbee8),
+                    var(--gradient-color-2, #e06cfd),
+                    var(--gradient-color-3, #8671f3),
+                    var(--gradient-color-4, #1e85e9)
+                )
+                border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        @include breakpoint(mobile) {
+            padding: 2.4rem;
+        }
+    }
+
+    .tariffs__card-main-title {
         font-style: normal;
         font-weight: 700;
-        font-size: 14px;
-        line-height: 120%;
-        padding: 1.2rem 2.4rem;
-        width: 100%;
+        font-size: 1.5rem;
+        line-height: 110%;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        margin: 0;
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 110%;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
     }
-}
 
-.tariffs__card-gradient-title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 4rem;
-    text-transform: uppercase;
-    background: linear-gradient(
-        90deg,
-        var(--gradient-color-1, #ffbee8) 0%,
-        var(--gradient-color-2, #e06cfd) 33.85%,
-        var(--gradient-color-3, #8671f3) 65.63%,
-        var(--gradient-color-4, #1e85e9) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    margin: 0;
-    padding: 0;
-    @include breakpoint(mobile) {
+    .tariffs__card-amount {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8rem;
+        line-height: 8rem;
+        background: linear-gradient(
+            90deg,
+            var(--gradient-color-1, #ffbee8) 0%,
+            var(--gradient-color-2, #e06cfd) 33.85%,
+            var(--gradient-color-3, #8671f3) 65.63%,
+            var(--gradient-color-4, #1e85e9) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        margin: 0;
+        margin-top: 4rem;
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 6rem;
+            line-height: 8rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .tariffs__card-secondary-title {
         font-style: normal;
         font-weight: 700;
         font-size: 2rem;
-        line-height: 2rem;
-        margin-bottom: 1.2rem;
+        line-height: 120%;
+        text-align: center;
+        margin: 0;
+        margin-top: 4rem;
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 120%;
+            margin-top: 0.5rem;
+        }
+    }
+
+    .tariffs__card-list {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 1.2rem;
+        text-align: left;
+        align-self: stretch;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-top: 3.5rem;
+        margin-bottom: 4rem;
+        @include breakpoint(mobile) {
+            grid-gap: 1rem;
+            margin-bottom: 2.4rem;
+            margin-top: 2rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .tariffs__card-list-item {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        padding-left: 3rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 120%;
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 120%;
+            padding-left: 2.5rem;
+        }
+    }
+
+    .tariffs__card-bullet {
+        width: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        top: 0.1rem;
+        left: 0;
+    }
+
+    .tariffs__card-link {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.8rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        user-select: none;
+        text-transform: uppercase;
+        background: linear-gradient(
+            90deg,
+            var(--gradient-color-1, #ffbee8) 0%,
+            var(--gradient-color-2, #e06cfd) 33.85%,
+            var(--gradient-color-3, #8671f3) 65.63%,
+            var(--gradient-color-4, #1e85e9) 100%
+        );
+        border-radius: 4rem;
+        margin-top: auto;
+        padding: 1.9rem 2.4rem;
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 120%;
+            padding: 1.2rem 2.4rem;
+            width: 100%;
+        }
+    }
+
+    .tariffs__card-gradient-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 4rem;
+        line-height: 4rem;
+        text-transform: uppercase;
+        background: linear-gradient(
+            90deg,
+            var(--gradient-color-1, #ffbee8) 0%,
+            var(--gradient-color-2, #e06cfd) 33.85%,
+            var(--gradient-color-3, #8671f3) 65.63%,
+            var(--gradient-color-4, #1e85e9) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        margin: 0;
+        padding: 0;
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 2rem;
+            margin-bottom: 1.2rem;
+        }
     }
 }
