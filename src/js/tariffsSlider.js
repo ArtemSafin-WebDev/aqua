@@ -23,6 +23,6 @@ export default function tariffsSlider() {
     }
 
     if (window.acf) {
-        window.acf.addAction('render_block_preview/type=gallery-slider', initializeACFSlider);
+        window.acf.addAction('render_block_preview/type=tariffs', initializeACFSlider);
     }
 }
